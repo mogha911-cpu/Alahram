@@ -349,5 +349,26 @@
         <p>جميع الحقوق محفوظة © 2026 - أهرام مصر للصناعات المعدنية</p>
     </footer>
 
+<!-- كود الحاسبة لدمجه في الموقع -->
+<div style="background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #ddd; margin: 20px 0;">
+    <h3>حاسبة أسعار مصنع الأهرام</h3>
+    <select id="productSelect" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+        <option value="150">مسلوب ومشتركات (150 جنيه)</option>
+        <option value="90">جريلات تهوية (90 جنيه)</option>
+        <option value="120">أكواع مرنة (120 جنيه)</option>
+        <option value="200">مواسير دكت مجلفنة (200 جنيه)</option>
+    </select>
+    <input type="number" id="quantityInput" value="1" min="1" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+    <button onclick="calculateTotal()" style="width: 100%; padding: 10px; background: #0056b3; color: white; border: none;">احسب التكلفة</button>
+    <h4 id="resultOutput"></h4>
+</div>
+
+<script>
+function calculateTotal() {
+    var price = parseFloat(document.getElementById('productSelect').value);
+    var quantity = parseInt(document.getElementById('quantityInput').value);
+    document.getElementById('resultOutput').innerHTML = "الإجمالي: " + (price * quantity) + " جنيه";
+}
+</script>
 </body>
 </html>
